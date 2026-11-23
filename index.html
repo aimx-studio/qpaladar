@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Q’Paladar – Carta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700;800&family=Playfair+Display+SC:wght@700&family=Shrikhand&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <span class="badge">Carta</span>
+  <div class="nombre">Q’Paladar</div>
+  <div class="tagline">Aretostón y más</div>
+</header>
+
+<form id="pedidoForm">
+
+<!-- ===== 🔥 Combos ===== -->
+<section class="menu-section" style="--i:0"><h2 onclick="toggleMenu(this)">🔥 Combos</h2><div class="platos" style="display:none;">
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Combo2Hamburguesas" value="Combo 2 Hamburguesas" onchange="toggleCantidad(this); toggleDescripcion(this)">Combo 2 Hamburguesas</label><span data-precio="25000">$25.000</span><input type="number" class="cantidad" name="Combo2HamburguesasCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">2 hamburguesas, papa francesa y 2 gaseosas pequeñas.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Combo2Perros" value="Combo 2 Perros" onchange="toggleCantidad(this); toggleDescripcion(this)">Combo 2 Perros</label><span data-precio="20000">$20.000</span><input type="number" class="cantidad" name="Combo2PerrosCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">2 perros, papa francesa y 2 gaseosas pequeñas.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="ComboEspecialHamburguesas" value="Combo Especial Hamburguesas" onchange="toggleCantidad(this); toggleDescripcion(this)">Combo Especial Hamburguesas</label><span data-precio="28000">$28.000</span><input type="number" class="cantidad" name="ComboEspecialHamburguesasCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">2 hamburguesas, papa francesa y 2 gaseosas pequeñas.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="ComboEspecialPerros" value="Combo Especial Perros" onchange="toggleCantidad(this); toggleDescripcion(this)">Combo Especial Perros</label><span data-precio="25000">$25.000</span><input type="number" class="cantidad" name="ComboEspecialPerrosCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">2 perros, papa francesa y 2 gaseosas pequeñas.</div></div>
+</div></section>
+<!-- ===== 🍟 Salchipapas ===== -->
+<section class="menu-section" style="--i:1"><h2 onclick="toggleMenu(this)">🍟 Salchipapas</h2><div class="platos" style="display:none;">
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="SalchipapaSencilla" value="Salchipapa Sencilla" onchange="toggleCantidad(this); toggleDescripcion(this)">Salchipapa Sencilla</label><span data-precio="7500">$7.500</span><input type="number" class="cantidad" name="SalchipapaSencillaCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Papa amarilla y francesa, salchicha y salsas. Para una persona.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="SalchipapaAdicion" value="Salchipapa Adición" onchange="toggleCantidad(this); toggleDescripcion(this)">Salchipapa Adición</label><span data-precio="13000">$13.000</span><input type="number" class="cantidad" name="SalchipapaAdicionCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Papa amarilla y francesa, salchicha, tocineta, queso, chorizo o carne de hamburguesa, y salsas. Para 1 persona.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="SalchipapaQPaladarPersonal" value="Salchipapa Q’Paladar Personal" onchange="toggleCantidad(this); toggleDescripcion(this)">Salchipapa Q’Paladar Personal</label><span data-precio="18000">$18.000</span><input type="number" class="cantidad" name="SalchipapaQPaladarPersonalCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Papa amarilla y francesa, salchicha americana, tocineta, carne de cerdo, pollo a la plancha, queso, maicito y salsas. Para 2 o 3 personas.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="SalchipapaQPaladarDoble" value="Salchipapa Q’Paladar Doble" onchange="toggleCantidad(this); toggleDescripcion(this)">Salchipapa Q’Paladar Doble</label><span data-precio="27000">$27.000</span><input type="number" class="cantidad" name="SalchipapaQPaladarDobleCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Papa amarilla y francesa, salchicha americana, tocineta, carne de cerdo, pollo a la plancha, queso, maicito y salsas. Para 2 o 3 personas.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Salchipapapara2Personas" value="Salchipapa para 2 Personas" onchange="toggleCantidad(this); toggleDescripcion(this)">Salchipapa para 2 Personas</label><span data-precio="16000">$16.000</span><input type="number" class="cantidad" name="Salchipapapara2PersonasCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Mucho más sabor, más porción, más Q’Paladar.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="SalchipapaQPaladarEspecial" value="Salchipapa Q’Paladar Especial" onchange="toggleCantidad(this); toggleDescripcion(this)">Salchipapa Q’Paladar Especial</label><span data-precio="38000">$38.000</span><input type="number" class="cantidad" name="SalchipapaQPaladarEspecialCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Papa amarilla, francesa, salchicha, carne de hamburguesa, chorizo, carne de cerdo a la plancha, costilla ahumada, queso, maduro, cebolla caramelizada, maicito, tocineta, carne desmechada con salsa especial y salsas. Para 3 o 4 personas.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="SalchipapaFamiliarMediana" value="Salchipapa Familiar Mediana" onchange="toggleCantidad(this); toggleDescripcion(this)">Salchipapa Familiar Mediana</label><span data-precio="50000">$50.000</span><input type="number" class="cantidad" name="SalchipapaFamiliarMedianaCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Papa amarilla y francesa, salchicha, carne de hamburguesa, pollo a la plancha, costilla ahumada, maicito, queso, chorizo, tocineta y salsas.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="SalchipapaFamiliarGrande" value="Salchipapa Familiar Grande" onchange="toggleCantidad(this); toggleDescripcion(this)">Salchipapa Familiar Grande</label><span data-precio="70000">$70.000</span><input type="number" class="cantidad" name="SalchipapaFamiliarGrandeCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Papa amarilla y francesa, salchicha, carne de hamburguesa, pollo a la plancha, costilla ahumada, maicito, queso, chorizo, tocineta y salsas.</div></div>
+</div></section>
+<!-- ===== 🥘 Picadas ===== -->
+<section class="menu-section" style="--i:2"><h2 onclick="toggleMenu(this)">🥘 Picadas</h2><div class="platos" style="display:none;">
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="PicadaPersonal" value="Picada Personal" onchange="toggleCantidad(this); toggleDescripcion(this)">Picada Personal</label><span data-precio="16000">$16.000</span><input type="number" class="cantidad" name="PicadaPersonalCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Monedas de plátano, papa amarilla, chorizo, costilla ahumada, cerdo, lechuga, tomate, tocineta y salsas.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="PicadaDoble" value="Picada Doble" onchange="toggleCantidad(this); toggleDescripcion(this)">Picada Doble</label><span data-precio="30000">$30.000</span><input type="number" class="cantidad" name="PicadaDobleCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Monedas de plátano, papa amarilla, chorizo, costilla ahumada, cerdo, lechuga, tomate, tocineta y salsas.</div></div>
+</div></section>
+<!-- ===== 🍔 Hamburguesas ===== -->
+<section class="menu-section" style="--i:3"><h2 onclick="toggleMenu(this)">🍔 Hamburguesas</h2><div class="platos" style="display:none;">
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="HamburguesaSencilla" value="Hamburguesa Sencilla" onchange="toggleCantidad(this); toggleDescripcion(this)">Hamburguesa Sencilla</label><span data-precio="13000">$13.000</span><input type="number" class="cantidad" name="HamburguesaSencillaCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Carne de hamburguesa, pan hamburguesa, cebolla, tomate, lechuga, ripio, queso y salsas.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="HamburguesaEspecialSencilla" value="Hamburguesa Especial Sencilla" onchange="toggleCantidad(this); toggleDescripcion(this)">Hamburguesa Especial Sencilla</label><span data-precio="17000">$17.000</span><input type="number" class="cantidad" name="HamburguesaEspecialSencillaCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Carne de hamburguesa, pan hamburguesa, cebolla, tomate, lechuga, ripio, queso, tocineta, maicito y salsas.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="HamburguesaEspecialDoble" value="Hamburguesa Especial Doble" onchange="toggleCantidad(this); toggleDescripcion(this)">Hamburguesa Especial Doble</label><span data-precio="32000">$32.000</span><input type="number" class="cantidad" name="HamburguesaEspecialDobleCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Carne de hamburguesa, pan hamburguesa, cebolla, tomate, lechuga, ripio, queso, tocineta, maicito y salsas.</div></div>
+</div></section>
+<!-- ===== 🌭 Perros ===== -->
+<section class="menu-section" style="--i:4"><h2 onclick="toggleMenu(this)">🌭 Perros</h2><div class="platos" style="display:none;">
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="PerroSencillo" value="Perro Sencillo" onchange="toggleCantidad(this); toggleDescripcion(this)">Perro Sencillo</label><span data-precio="10000">$10.000</span><input type="number" class="cantidad" name="PerroSencilloCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Pan perro, salchicha o choriperro, ripio, salsas y quesos.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="PerroEspecial" value="Perro Especial" onchange="toggleCantidad(this); toggleDescripcion(this)">Perro Especial</label><span data-precio="15000">$15.000</span><input type="number" class="cantidad" name="PerroEspecialCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Pan perro, salchicha o choriperro, ripio, tocineta, cebolla, queso y salsas.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="PerroSalchichaAmericana" value="Perro Salchicha Americana" onchange="toggleCantidad(this); toggleDescripcion(this)">Perro Salchicha Americana</label><span data-precio="18000">$18.000</span><input type="number" class="cantidad" name="PerroSalchichaAmericanaCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+</div></section>
+<!-- ===== 🫓 Arepas ===== -->
+<section class="menu-section" style="--i:5"><h2 onclick="toggleMenu(this)">🫓 Arepas</h2><div class="platos" style="display:none;">
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="ArepadePollo" value="Arepa de Pollo" onchange="toggleCantidad(this); toggleDescripcion(this)">Arepa de Pollo</label><span data-precio="10000">$10.000</span><input type="number" class="cantidad" name="ArepadePolloCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Jamón, queso, pollo desmechado o a la plancha y salsas.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="ArepadeCarne" value="Arepa de Carne" onchange="toggleCantidad(this); toggleDescripcion(this)">Arepa de Carne</label><span data-precio="12000">$12.000</span><input type="number" class="cantidad" name="ArepadeCarneCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Jamón, queso, carne desmechada o asada y salsas.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="ArepaMixta" value="Arepa Mixta" onchange="toggleCantidad(this); toggleDescripcion(this)">Arepa Mixta</label><span data-precio="15000">$15.000</span><input type="number" class="cantidad" name="ArepaMixtaCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Jamón, queso, pollo desmechado, carne desmechada, ripio y salsas.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="ArepaConTodo" value="Arepa Con Todo" onchange="toggleCantidad(this); toggleDescripcion(this)">Arepa Con Todo</label><span data-precio="18000">$18.000</span><input type="number" class="cantidad" name="ArepaConTodoCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Jamón, queso, pollo desmechado, chicharrón, maicito, carne desmechada, picadillo, huevo de codorniz y salsa.</div></div>
+</div></section>
+<!-- ===== 🍌 Tostones ===== -->
+<section class="menu-section" style="--i:6"><h2 onclick="toggleMenu(this)">🍌 Tostones</h2><div class="platos" style="display:none;">
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="TostondePollo" value="Tostón de Pollo" onchange="toggleCantidad(this); toggleDescripcion(this)">Tostón de Pollo</label><span data-precio="12000">$12.000</span><input type="number" class="cantidad" name="TostondePolloCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Queso, jamón, pollo desmechado y salsas.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="TostondeCarne" value="Tostón de Carne" onchange="toggleCantidad(this); toggleDescripcion(this)">Tostón de Carne</label><span data-precio="15000">$15.000</span><input type="number" class="cantidad" name="TostondeCarneCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Queso, jamón, carne desmechada y salsas.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="TostonMixto" value="Tostón Mixto" onchange="toggleCantidad(this); toggleDescripcion(this)">Tostón Mixto</label><span data-precio="20000">$20.000</span><input type="number" class="cantidad" name="TostonMixtoCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Queso, jamón, pollo, carne desmechada y salsas.</div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="TostonQPaladar" value="Tostón Q’Paladar" onchange="toggleCantidad(this); toggleDescripcion(this)">Tostón Q’Paladar</label><span data-precio="23000">$23.000</span><input type="number" class="cantidad" name="TostonQPaladarCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div><div class="descripcion" style="display:none;">Queso, jamón, pollo, carne desmechada, tocineta, maicito, chicharrón, huevo de codorniz y salsas.</div></div>
+</div></section>
+<!-- ===== 🥤 Gaseosas y Aguas ===== -->
+<section class="menu-section" style="--i:7"><h2 onclick="toggleMenu(this)">🥤 Gaseosas y Aguas</h2><div class="platos" style="display:none;">
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="CocaCola400ml" value="Coca-Cola 400 ml" onchange="toggleCantidad(this); toggleDescripcion(this)">Coca-Cola 400 ml</label><span data-precio="5000">$5.000</span><input type="number" class="cantidad" name="CocaCola400mlCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Postobon400ml" value="Postobón 400 ml" onchange="toggleCantidad(this); toggleDescripcion(this)">Postobón 400 ml</label><span data-precio="4000">$4.000</span><input type="number" class="cantidad" name="Postobon400mlCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="BigCola400ml" value="Big Cola 400 ml" onchange="toggleCantidad(this); toggleDescripcion(this)">Big Cola 400 ml</label><span data-precio="3000">$3.000</span><input type="number" class="cantidad" name="BigCola400mlCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="CocaCola1Litro" value="Coca-Cola 1 Litro" onchange="toggleCantidad(this); toggleDescripcion(this)">Coca-Cola 1 Litro</label><span data-precio="8000">$8.000</span><input type="number" class="cantidad" name="CocaCola1LitroCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Postobon1Litro" value="Postobón 1 Litro" onchange="toggleCantidad(this); toggleDescripcion(this)">Postobón 1 Litro</label><span data-precio="7000">$7.000</span><input type="number" class="cantidad" name="Postobon1LitroCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="BigCola1Litro" value="Big Cola 1 Litro" onchange="toggleCantidad(this); toggleDescripcion(this)">Big Cola 1 Litro</label><span data-precio="5000">$5.000</span><input type="number" class="cantidad" name="BigCola1LitroCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="AguaSaborizada" value="Agua Saborizada" onchange="toggleCantidad(this); toggleDescripcion(this)">Agua Saborizada</label><span data-precio="4000">$4.000</span><input type="number" class="cantidad" name="AguaSaborizadaCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="AguaconGas" value="Agua con Gas" onchange="toggleCantidad(this); toggleDescripcion(this)">Agua con Gas</label><span data-precio="4000">$4.000</span><input type="number" class="cantidad" name="AguaconGasCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="AguaNatural" value="Agua Natural" onchange="toggleCantidad(this); toggleDescripcion(this)">Agua Natural</label><span data-precio="4000">$4.000</span><input type="number" class="cantidad" name="AguaNaturalCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+</div></section>
+<!-- ===== 🍹 Jugos y Limonadas ===== -->
+<section class="menu-section" style="--i:8"><h2 onclick="toggleMenu(this)">🍹 Jugos y Limonadas</h2><div class="platos" style="display:none;">
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="JugodelValle" value="Jugo del Valle" onchange="toggleCantidad(this); toggleDescripcion(this)">Jugo del Valle</label><span data-precio="4000">$4.000</span><input type="number" class="cantidad" name="JugodelValleCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="Cifrut" value="Cifrut" onchange="toggleCantidad(this); toggleDescripcion(this)">Cifrut</label><span data-precio="4000">$4.000</span><input type="number" class="cantidad" name="CifrutCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="CifrutMini" value="Cifrut Mini" onchange="toggleCantidad(this); toggleDescripcion(this)">Cifrut Mini</label><span data-precio="2000">$2.000</span><input type="number" class="cantidad" name="CifrutMiniCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="JugoNaturalenAgua" value="Jugo Natural en Agua" onchange="toggleCantidad(this); toggleDescripcion(this)">Jugo Natural en Agua</label><span data-precio="4000">$4.000</span><input type="number" class="cantidad" name="JugoNaturalenAguaCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="JugoNaturalenLeche" value="Jugo Natural en Leche" onchange="toggleCantidad(this); toggleDescripcion(this)">Jugo Natural en Leche</label><span data-precio="6000">$6.000</span><input type="number" class="cantidad" name="JugoNaturalenLecheCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="JarradeJugoenAgua" value="Jarra de Jugo en Agua" onchange="toggleCantidad(this); toggleDescripcion(this)">Jarra de Jugo en Agua</label><span data-precio="10000">$10.000</span><input type="number" class="cantidad" name="JarradeJugoenAguaCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="JarradeJugoenLeche" value="Jarra de Jugo en Leche" onchange="toggleCantidad(this); toggleDescripcion(this)">Jarra de Jugo en Leche</label><span data-precio="15000">$15.000</span><input type="number" class="cantidad" name="JarradeJugoenLecheCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="LimonadaNatural" value="Limonada Natural" onchange="toggleCantidad(this); toggleDescripcion(this)">Limonada Natural</label><span data-precio="4000">$4.000</span><input type="number" class="cantidad" name="LimonadaNaturalCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="LimonadadeCoco" value="Limonada de Coco" onchange="toggleCantidad(this); toggleDescripcion(this)">Limonada de Coco</label><span data-precio="7000">$7.000</span><input type="number" class="cantidad" name="LimonadadeCocoCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="JarradeLimonadaNatural" value="Jarra de Limonada Natural" onchange="toggleCantidad(this); toggleDescripcion(this)">Jarra de Limonada Natural</label><span data-precio="10000">$10.000</span><input type="number" class="cantidad" name="JarradeLimonadaNaturalCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+<div class="item"><div class="item-linea"><label><input type="checkbox" class="check-plato" name="JarradeLimonadadeCoco" value="Jarra de Limonada de Coco" onchange="toggleCantidad(this); toggleDescripcion(this)">Jarra de Limonada de Coco</label><span data-precio="17000">$17.000</span><input type="number" class="cantidad" name="JarradeLimonadadeCocoCantidad" value="0" min="0" disabled onchange="calcularTotal()"></div></div>
+</div></section>
+
+<!-- ===== FORMULARIO DEL CLIENTE ===== -->
+<section class="menu-section" style="--i:9">
+  <h2>📝 Detalles del Cliente</h2>
+  <div class="form-group"><label for="nombre">👤 Nombre:</label><input type="text" id="nombre" name="nombre" required placeholder="Tu nombre"></div>
+  <div class="form-group"><label for="telefono">📞 Número de WhatsApp:</label><input type="tel" id="telefono" name="telefono" required placeholder="Ej: 3001234567"></div>
+  <div class="form-group"><label for="tipoEntrega">📦 Tipo de entrega:</label>
+    <select id="tipoEntrega" name="tipoEntrega" required>
+      <option value="">-- Selecciona --</option><option value="Recoger en el local">Recoger en el local</option><option value="A domicilio">A domicilio</option><option value="Comer dentro del local">Comer dentro del local</option>
+    </select></div>
+  <div id="direccionField" class="form-group" style="display:none;">
+    <p id="costoDomicilio" style="display:none;color:red;font-weight:bold;">🛵 El costo del domicilio depende del barrio y se cuadra por WhatsApp.</p>
+    <label for="direccion">📍 Dirección:</label><input type="text" id="direccion" name="direccion"></div>
+  <div id="mesaField" class="form-group" style="display:none;"><label for="numeroMesa">🔢 Número de mesa:</label><input type="text" id="numeroMesa" name="numeroMesa"></div>
+  <div class="form-group"><label for="tipoPago">💰 Tipo de pago:</label>
+    <select id="tipoPago" name="tipoPago" required><option value="">-- Selecciona --</option><option value="Efectivo">Efectivo</option><option value="Nequi">Nequi</option><option value="Llave">Llave</option><option value="Daviplata">Daviplata</option></select></div>
+  <div id="efectivoField" class="form-group" style="display:none;"><label for="efectivoCliente">💵 Con cuánto pagará:</label><small>Esto ayuda a preparar el cambio correcto 🙏</small><input type="text" id="efectivoCliente" name="efectivoMonto"></div>
+  <div id="infoPago" style="display:none;">
+    <div id="infoNequi" class="info-transferencia" style="display:none;">
+      <div class="pago-titulo">📲 Nequi</div>
+      <div class="pago-dato"><span class="pago-num">3242815098</span><button type="button" class="copiar" onclick="copiarDato(this, '3242815098')">📋 Copiar</button></div>
+      <div class="pago-titular">Titular: Juliana Arboleda</div>
+      <small>Envía el pantallazo del pago por WhatsApp 🙏</small>
+    </div>
+    <div id="infoLlave" class="info-transferencia" style="display:none;">
+      <div class="pago-titulo">🔑 Llave</div>
+      <div class="pago-dato"><span class="pago-num">@GBS118</span><button type="button" class="copiar" onclick="copiarDato(this, '@GBS118')">📋 Copiar</button></div>
+      <div class="pago-titular">Titular: Juliana Arboleda</div>
+      <small>Envía el pantallazo del pago por WhatsApp 🙏</small>
+    </div>
+    <div id="infoDaviplata" class="info-transferencia" style="display:none;">
+      <div class="pago-titulo">📲 Daviplata</div>
+      <div class="pago-dato"><span class="pago-num">3018189494</span><button type="button" class="copiar" onclick="copiarDato(this, '3018189494')">📋 Copiar</button></div>
+      <div class="pago-titular">Titular: Juliana Arboleda</div>
+      <small>Envía el pantallazo del pago por WhatsApp 🙏</small>
+    </div>
+  </div>
+  <div class="form-group"><label for="especificaciones">📒 Especificaciones:</label><textarea id="especificaciones" name="especificaciones" rows="3" placeholder="Ej: sin cebolla, sin salsas..."></textarea></div>
+</section>
+
+<section class="menu-section" style="--i:10">
+  <h2>💸 Total: <span id="total">$0</span></h2>
+  <input type="hidden" name="totalPedido" id="totalPedido">
+  <div class="form-group"><label><input type="checkbox" id="confirmPedido" required>✅ Autorizo el tratamiento de mis datos para gestionar este pedido.</label></div>
+  <button type="submit" class="btn">📲 Enviar Pedido</button>
+</section>
+</form>
+
+<footer>Q’Paladar · Calle 42 # 8-44, Campestre</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
